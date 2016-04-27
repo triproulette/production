@@ -1,7 +1,15 @@
-# production
+# Trip Roulette
+Authors:
 
-# commands to run on gunicorn server side (inside ~/triproulette/production)
-python app.py \n
-gunicorn --bind 0.0.0.0:PORT --reload app \n
-watch -n[seconds] -d git pull --rebase origin master \n
-iwatch -t "\.py$" -c "aplay [sound-path]" -e close_write [target] \n
+    -Amit:amit@amit.amit
+    -Tomer:tomer@tomer.remot
+    -Bar:bar@bar.bar
+    -Assaf:assaf@assaf.assaf
+
+# Initialization
+
+*Note: Run inside source folder*
+* python app.py
+* gunicorn --bind 0.0.0.0:PORT --reload app
+* watch -n[seconds] -d git pull --rebase origin master
+* iwatch -t "\.py$" -c "aplay [sound-path]" -e close_write [target]
