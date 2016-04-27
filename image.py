@@ -1,6 +1,5 @@
 
 import os
-import uuid
 import mimetypes
 
 import falcon
