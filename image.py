@@ -28,7 +28,7 @@ class Collection(object):
         resp.location = '/image/' + filename
 
 
-class Item(object):
+class Resource(object):
 
     def __init__(self, storage_path):
         self.storage_path = storage_path
@@ -39,10 +39,3 @@ class Item(object):
         resp.stream = open('triprollete.jpg', 'rb')
         resp.stream_len = os.path.getsize('triprollete.jpg')
 
-
-
-class Resource(object):
-
-    def on_get(self, req, resp):
-        resp.body =
-        resp.status = falcon.HTTP_200
