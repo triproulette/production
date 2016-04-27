@@ -4,7 +4,7 @@ import falcon
 class Resource(object):
 
     def on_get(self, req, resp):
-        resp.body = '{"message": "!aaafafa!@kod! up!dated!!!!!!"}'
+        resp.body = '{"message": "!aaazfafa!@kod! up!dated!!!!!!"}'
         resp.status = falcon.HTTP_200
 #sandak
 #Tomer
