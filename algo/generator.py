@@ -21,8 +21,8 @@ def getTrip(start, end, budget , properties ):
    ev1 = Entities.Event()
    ev1.eventID=2
    ev1.poiID=1
-   ev1.startTime=datetime.datetime(2016,5,6,8,40,0)
-   ev1.endTime=datetime.datetime(2016,5,6,11,40,0)
+   ev1.startTime = datetime.datetime(2016,5,6,8,40,0)
+   ev1.endTime = datetime.datetime(2016,5,6,11,40,0)
    ev1.prevEvent=0
    ev1.nextEvent=2
 
