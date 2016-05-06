@@ -14,7 +14,7 @@ def stepGenerator(prop,prevnt, curevnt,):
     else:
         distance_grade = distance/210
 
-##
+
     ##prop calc
 
     if prevnt.endTime -  -  * *
