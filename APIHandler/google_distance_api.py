@@ -11,4 +11,5 @@ class GoogleDistance(APIHandler):
         params = {"apikey": self.apikey, "origins": str(o_latitude) + "," + str(o_longitude),
                   "destinations": str(d_latitude) + "," + str(d_longitude)}
         APIHandler.serialize_params(self, params)
-        return APIHandler.call_api(self)
+        raw_json = APIHandler.call_api(self)
+        return raw_json["rows"][0]["elements"][0]["duration"]["value"] # seconds
