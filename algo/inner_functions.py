@@ -3,10 +3,9 @@ import Entities.Imports
 from random import randint
 
 def template_generator( prop ):
-    rnd = randint(0,3)
-    if rnd==0:
-        prop
+   ##stub
+   # prop = Entities.Properties()
+   prop._tripID=280390
+   return prop
 
 
-
-    return prop

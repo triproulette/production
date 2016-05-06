@@ -1,11 +1,11 @@
-import datetime
+import time
 class Properties(object):
     _tripID=0
-    _dayBeginning=datetime.datetime(2016,5,6,12,40,0)
-    _dayEnd=datetime.datetime(2016,5,6,12,40,0)
-    _breakfastTime=datetime.datetime(2016,5,6,12,40,0)
-    _lunchTime=datetime.datetime(2016,5,6,12,40,0)
-    _dinnerTime=datetime.datetime(2016,5,6,12,40,0)
+    _dayBeginning=time.time(8,0,0)
+    _dayEnd=time.time(20,0,0)
+    _breakfastTime=time.time(9,0,0)
+    _lunchTime=time.time(12,30,0)
+    _dinnerTime=time.time(19,00,0)
     _type="temp" #nightlife,history,coaster,nature
 
     def __init__(self,tripID,dayBeginning,dayEnd,breakfastTime,lunchTime,dinnerTime,type):
