@@ -1,0 +1,83 @@
+
+
+.body{
+	margin: 0;
+}
+
+.header{
+	width: 100%;
+	height:200px;
+}
+
+.city-block{
+	display:block;
+	height: 460px; 
+    width: 460px;
+	background-size: auto 100%;
+	background-repeat:  no-repeat;
+	float: left;
+	margin: 10px;
+	
+}
+
+.overlay-color {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.container {
+	overflow:hidden;
+	margin:0;
+}
+
+.city-name{
+	position: relative;
+	width: 100%;
+	height:30%;
+	text-align: center;
+	top: 35%;
+	font-size:60px;
+	color: white;
+	
+
+}
+
+#Amsterdam {
+	background-image: url("http://i.imgur.com/hShWvZ7.jpg");
+}
+	
+#ny{
+	background-image: url("http://i.imgur.com/ouG1Zyb.jpg");	
+}
+
+#Bangkok{
+	background-image: url("http://i.imgur.com/KP3YzIP.jpg");
+}
+#Dubai{
+	background-image: url("http://i.imgur.com/1l8MBo2.jpg");
+}
+#HongKong{
+	background-image: url("http://i.imgur.com/kNUQ5Fc.jpg");
+}
+#London{
+	background-image: url("http://i.imgur.com/sWW56Em.jpg");
+}
+#Paris{
+	background-image: url("http://i.imgur.com/6Czr4pk.jpg");
+}
+#Rome{
+	background-image: url("http://i.imgur.com/BS9mLcJ.jpg");
+}
+#Salzburg{
+	background-image: url("http://i.imgur.com/k3F2lon.jpg");
+}
+#Seoul{
+	background-image: url("http://i.imgur.com/qZ3RrVL.jpg");
+}
+#Singapore{
+	background-image: url("http://i.imgur.com/RQg1iru.jpg");
+}
+#Toledo{
+	background-image: url("http://i.imgur.com/4CX8aO0.jpg");
+}
