@@ -3,8 +3,7 @@ from time import time
 
 class Properties(object):
 
-    def __init__(self, tripID, dayBeginning, dayEnd, breakfastTime, lunchTime, dinnerTime, type):
-        self._tripID = tripID
+    def __init__(self, dayBeginning, dayEnd, breakfastTime, lunchTime, dinnerTime, type):
         self._dayBeginning = dayBeginning
         self._dayEnd = dayEnd
         self._breakfastTime = breakfastTime
