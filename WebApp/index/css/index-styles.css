@@ -1,0 +1,111 @@
+
+
+.my-container {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #e5e0c9;
+}
+
+body {
+	overflow: hidden;
+}
+
+.header {
+	position: fixed;
+	width: 100%;
+	height: 10.57%;
+	background-image: url("../images/header.png");
+	background-size: 100% 100%;
+}
+
+.user-image {
+	position: fixed !important;
+	width: 17.585% !important;
+	height: 9.173% !important;
+	background-image: url("../images/amit_sandak.jpg");
+	background-size: 100% 100% !important;
+	left: -0.5%;
+	top: -0.3%;
+}
+
+.day-container {
+	position: fixed;
+	width: 49.4488%;
+	height: 5.153%;
+	top: 7.81%;
+	left: 25.2756%;
+	background-color: white;
+	border-radius: 50px;
+}
+
+.activity-container {
+	position: fixed;
+	width: 92.49%;
+	height: 80%;
+	top: 17.968%;
+	left: 3.755%;
+	background-color: transparent;
+	overflow: scroll;
+	
+}
+
+.activity-block {
+	width: 100%;
+	margin: 0 0 2% 0;
+	height: 20%;
+	background-color: white;
+
+}
+
+.activity-icon {
+	margin: 0; 
+	width: 11%;
+	height: 32.841%;
+	float: left;
+	background-image: url("../images/activity_icon_food.png");
+	background-size: 100% 100%;
+}
+
+.activity-image {
+	height: 100%;
+	width: 38.45%;
+	background-color: white;
+	float: right;
+	background-image: url("../images/Central_Park_Zoo_area.jpg");
+	background-size:  auto 100%;
+	background-repeat: no-repeat;
+}
+
+.activity-time {
+	width: 50.55%;
+	height: 32.841%;
+	background-color: transparent;
+	float: left; 
+	font-size: 400%;
+	text-align: center;
+	color: #000000;
+	font-family: 'trebuchet ms';
+	font-style: italic;
+	font-weight: bold;
+	font-variant: normal;
+}
+
+.shadow {
+	position: fixed;
+	z-index: 999999;
+	pointer-events: none;
+	
+	height: 80.3% !important; 
+
+}
+
+.timeline {
+	position: fixed;
+	height: 90%;
+	width: 1%;
+	left: 49.5%;
+	top: 10%;
+	background-color: white;
+}
+
