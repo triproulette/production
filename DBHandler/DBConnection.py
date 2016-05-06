@@ -1,7 +1,8 @@
 import mysql.connector
 import time
 
-class DBConnection:
+
+class DBConnection(object):
     instance = None
     connection = None
 
@@ -10,7 +11,7 @@ class DBConnection:
             DBConnection.instance = object.__new__(cls)
         return DBConnection.instance
 
-    def __init__(self, user, password, host, database):
+    def __init__(self, user='trip', password='trip', host='10.10.20.209:3306', database='tr_db'):
         self.user = user
         self.password = password
         self.host = host
@@ -27,7 +28,3 @@ class DBConnection:
 
     def close(self):
         self.connection.close()
-
-
-db_con = DBConnection('root', 'root', "10.10.20.209", 'tr_db')
-time.sleep(3)

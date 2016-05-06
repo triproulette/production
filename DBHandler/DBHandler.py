@@ -1,6 +1,7 @@
 import mysql.connector
 
-class DBHandler:
+
+class DBHandler(object):
     db_connection = None
 
     def __init__(self, db_connection):
@@ -12,14 +13,19 @@ class DBHandler:
         print("Host: " + self.db_connection.host)
         print("DB: " + self.db_connection.database)
 
-
-    def execute_query(self, query):
+    def query(self, query):
         m = self.db_connection.connection.cursor()
         m.execute(query)
         return m.fetchall()
 
+    def execute(self, query):
+        m = self.db_connection.connection.cursor()
+        m.execute(query)
+        return m.lastrowid
 
 
+    def create(self, table_name, table_fields, table_values):
+        return self.execute_query("INSERT INTO {} ({}) VALUES({})".format(table_name, table_fields, table_values))
 
 
 

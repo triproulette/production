@@ -4,16 +4,10 @@ import datetime
 
 class Trip(object):
     _tripID=0
-    _start=0 # event id
-    _end=0 # event id
-    _budget=0
     _eventList= []
 
     def __init__(self,tripID,start,end,budget):
         self._tripID=tripID
-        self._start=start
-        self._end=end
-        self._budget=budget
         self._eventList
 
     def setEventList(self,index,newEvent):
