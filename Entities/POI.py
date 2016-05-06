@@ -1,16 +1,8 @@
 import datetime
-
+from DBHandler import DBHandler
+from DBHandler import DBConnection
 
 class POI(object):
-    _poiID=0
-    _title="temp"
-    _description="temp"
-    _category="temp"
-    _grade=1.01 #float
-    _openingHour=datetime.datetime(2016,5,6,12,40,0)
-    _closingHour=datetime.datetime(2016,5,6,12,40,0)
-    _activityTime=0 #in minutes
-    _image="image"
 
     def __init__(self,poiID,title,description,category,geoLocation,grade,activityTime,image):
         self._poiID=poiID
@@ -28,3 +20,11 @@ class POI(object):
             ,self._geoLocation,self._grade,self._activityTime,
             self._image.encode('utf-8')
         )
+
+    def save_to_db(self):
+        conn = DBConnection.DBConnection()
+        handler = DBHandler.DBHandler(conn)
+        handler.create('poi','title,description,category,geoLocation,grade,activity_time,image',
+                       "'{}','{}','{}','{}','{}','{}','{}'".format(self._title,self._description,
+                                                     self._geoLocation,str(self._grade),self._activityTime,
+                                                     self._image))
