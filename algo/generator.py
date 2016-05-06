@@ -1,4 +1,5 @@
 import Entities.Imports
+import datetime
 
 def getTrip(start, end, budget , properties ):
 
@@ -53,15 +54,15 @@ def getTrip(start, end, budget , properties ):
 
    flight2 = flight
    flight2.poiID = 5
-   flight.title = "prague->tlv tlv2425"
-   flight.description = "flight from prague to tlv"
-   flight.geoLocation = "tlv"
-   flight.grade = 1.01  # float
-   flight.cost = 1.01  # float
-   flight.openingHour = datetime.datetime(2016, 5, 6, 20, 40, 0)
-   flight.closingHour = datetime.datetime(2016, 5, 6, 23, 40, 0)
-   flight.activityTime = 3 * 60  # in minutes
-   flight.image = "image"
+   flight2.title = "prague->tlv tlv2425"
+   flight2.description = "flight from prague to tlv"
+   flight2.geoLocation = "tlv"
+   flight2.grade = 1.01  # float
+   flight2.cost = 1.01  # float
+   flight2.openingHour = datetime.datetime(2016, 5, 6, 20, 40, 0)
+   flight2.closingHour = datetime.datetime(2016, 5, 6, 23, 40, 0)
+   flight2.activityTime = 3 * 60  # in minutes
+   flight2.image = "image"
 
 
    trip.start = 2
@@ -69,6 +70,4 @@ def getTrip(start, end, budget , properties ):
    return trip
 
 
-
-}
 
