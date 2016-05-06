@@ -1,4 +1,6 @@
 import datetime
+
+
 class Event(object):
     eventID=0
     poiID=0
@@ -15,3 +17,9 @@ class Event(object):
         self.prevEvent=prevEvent
         self.nextEvent=nextEvent
 
+    def printEvent(self):
+        print("\n Event ID:%d" % self.eventID+"\n poi ID:%d" % self.poiID+"\n start time:" , self.startTime , "\n end time:" , self.endTime , "\n prev event:%d" % self.prevEvent+"\n next event:%d" % self.nextEvent)
+
+#Test for print;
+#event1=Event(1,1,startTime=datetime.datetime(2016,5,6,12,40,0),endTime=datetime.datetime(2016,5,6,12,40,0),prevEvent=0,nextEvent=2)
+#event1.printEvent()
