@@ -25,6 +25,6 @@ class POI(object):
         conn = DBConnection.DBConnection()
         handler = DBHandler.DBHandler(conn)
         handler.create('poi','title,description,category,geoLocation,grade,activity_time,image',
-                       "'{}','{}','{}','{}','{}','{}','{}'".format(self._title,self._description,
-                                                     self._geoLocation,str(self._grade),self._activityTime,
+                       "'{}','{}','{}','{}','{}','{}','{}'".format(self._title,self._description,self._category,
+                                                     self._geoLocation,self._grade,self._activityTime,
                                                      self._image))
