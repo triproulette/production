@@ -9,11 +9,9 @@ import datetime
 def stepGenerator(prop,prevnt):
     db = DBHandler.DBHandler()
     ##normalization
-    population_grade = curevnt/5;
     api = GoogleDistance()
     prev_poi = db.getPoi(prevnt.eventID)
-    curr_poi = db.getPoi(curevnt.eventID)
-    distance = api.call_api(prev_poi._geoLocation._latitude , prev_poi._geoLocation._longitude, curr_poi._geoLocation._latitude , curr_poi._geoLocation._longitude)
+
     if distance > 210:
         distance_grade = 0
     else:
@@ -73,4 +71,16 @@ def stepGenerator(prop,prevnt):
        results = api.call_api(prev_poi._geoLocation._latitude , prev_poi._geoLocation._longitude, radius=100, check_in_date=prevnt._endtime.isoformat(), check_out_date= prevnt._endtime + datetime.datetime.timedelta(days=1).replace(prop._dayBeginning)).save_to_db()
 
 
-    def algo_grade_calc():
+    def algo_grade_calc(prop,prennt, curevnt):
+        curr_poi = db.getPoi(curevnt.eventID)
+        distance = api.call_api(prev_poi._geoLocation._latitude, prev_poi._geoLocation._longitude,
+                                curr_poi._geoLocation._latitude, curr_poi._geoLocation._longitude)
+
+        if distance > 210:
+            distance_grade = 0
+        else:
+            distance_grade = distance / 210
+
+        population_grade = curr_poi._grade / 5;
+
+        return grade
