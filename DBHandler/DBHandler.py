@@ -17,7 +17,7 @@ class DBHandler:
         m = self.db_connection.connection.cursor()
         m.execute(query)
         return m.fetchall()
-
+##
 
     def create_user(self):
 
