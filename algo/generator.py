@@ -18,6 +18,7 @@ def getTrip(start, end, budget , properties ):
    flight.activityTime=3*60 #in minutes
    flight.image="image"
 
+
    ev1 = Entities.Event()
    ev1.eventID=2
    ev1.poiID=1
@@ -38,6 +39,7 @@ def getTrip(start, end, budget , properties ):
    poi.closingHour = datetime.datetime(2016, 5, 6, 12, 40, 0)
    poi.activityTime = 3 * 60  # in minutes
    poi.image = "image"
+
 
    ev2 = ev1
    ev2.eventID  = 4
