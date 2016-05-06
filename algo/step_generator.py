@@ -1,6 +1,7 @@
 from APIHandler.google_distance_api import GoogleDistance
 from DBHandler import DBHandler
-from Entities import Imports
+from Entities import POI
+from Entities import Event
 
 import datetime
 
@@ -16,8 +17,18 @@ def stepGenerator(prop,prevnt, curevnt,):
         distance_grade = 0
     else:
         distance_grade = distance/210
-#
+
     ##prop calc
 
     if abs(prevnt.endTime-prop.breakfastTime) < datetime.timedelta(days=0, hours=1, minutes=0, seconds=0, microseconds=0) :
-        food_ev =
+        foodPoi = POI.POI()
+        foodPoi._title = "breakfast"
+        foodPoi._description = "breakfast time"
+        foodPoi._category = "food"
+        foodPoi._geoLocation = prev_poi._geoLocation
+        foodPoi._grade = 0
+        foodPoi._activityTime = prev_poi._activityTime
+
+        food_ev = Event.Event()
+
+
