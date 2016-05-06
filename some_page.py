@@ -9,7 +9,8 @@ class Resource(object):
         conn = DBConnection.DBConnection()
         handler = DBHandler.DBHandler(conn)
         tripId = handler.create(table_name='trip', table_fields='user_id', table_values="'some_user_id'")
-        resp.body = '{"message": "trip inserted, id is {}"}'.format(tripId)
+        print tripId
+        resp.body = '{"message": "trip inserted, id is %s"}' % tripId
         resp.status = falcon.HTTP_200
 #sandak
 #Tomer
