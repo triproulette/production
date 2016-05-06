@@ -25,7 +25,7 @@ class DBHandler(object):
 
 
     def create(self, table_name, table_fields, table_values):
-        return self.execute_query("INSERT INTO {} ({}) VALUES({})".format(table_name, table_fields, table_values))
+        return self.execute("INSERT INTO {} ({}) VALUES({})".format(table_name, table_fields, table_values))
 
 
 
