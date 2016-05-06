@@ -2,10 +2,8 @@ import datetime
 from DBHandler import DBHandler
 from DBHandler import DBConnection
 
-class POI(object):
 
-    def __init__(self):
-        pass
+class POI(object):
 
     def __init__(self,poiID,title,description,category,geoLocation,grade,activityTime,image):
         self._poiID=poiID

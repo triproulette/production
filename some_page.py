@@ -11,18 +11,8 @@ class Resource(object):
         conn = DBConnection.DBConnection()
         handler = DBHandler.DBHandler(conn)
         #tripId = handler.create(table_name='trip', table_fields='user_id', table_values="'some_user_id'")
-        poi = POI()
-        poi.category = "flight"
-        poi.title = "some event"
-        poi.description = "some desription about some event"
-        poi.geoLocation = "10.10,20.20"
-        poi.grade = 1.01  # float
-        poi.activityTime = 3 * 60  # in minutes
-        poi.image = "image"
+        poi = POI(category="flight",title="some poi",description="some desc",geoLocation="10.2,11.1",
+                  grade=1.11,activityTime=3,image="blalala.png")
         poiId = poi.save_to_db()
         resp.body = '{"message": "poi inserted, id is %s"}' % poiId
         resp.status = falcon.HTTP_200
-#sandak
-#Tomer
-#bar
-#asaf
