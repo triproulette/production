@@ -1,4 +1,6 @@
-from abs_api_handler import APIHandler
+from APIHandler.abs_api_handler import APIHandler
+from Entities.POI import POI
+from Entities.GeoLocation import GeoLocation
 
 
 class POIGeosearch(APIHandler):
@@ -10,4 +12,15 @@ class POIGeosearch(APIHandler):
     def call_api(self, latitude, longitude, radius):
         params = {"apikey": self.apikey, "latitude": latitude, "longitude": longitude, "radius": radius}
         APIHandler.serialize_params(self, params)
-        return APIHandler.call_api(self)
+        raw_json = APIHandler.call_api(self)
+        pois = []
+
+        for poi in raw_json["points_of_interest"]:
+            pois.append(POI(poiID=0, title=poi["title"], description=poi["details"]["short_description"],
+                            category="",
+                            geoLocation=GeoLocation(latitude=poi["location"]["latitude"],
+                                                    longitude=poi["location"]["longitude"]),
+                            grade=poi["grades"]['yapq_grade'],
+                            activityTime=3,
+                            image=poi["main_image"])
+                        )
