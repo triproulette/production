@@ -1,7 +1,7 @@
 import datetime
 from DBHandler import DBHandler
 from DBHandler import DBConnection
-#a
+
 
 class POI(object):
 
