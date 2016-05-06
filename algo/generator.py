@@ -1,4 +1,4 @@
-import Entities.Entities
+import Entities.Imports
 
 def getTrip(start, end, budget , properties ):
 

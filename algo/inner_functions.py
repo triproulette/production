@@ -1,5 +1,5 @@
 
-import Entities.Entities
+import Entities.Imports
 
 
 def template_generator(prop):
