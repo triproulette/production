@@ -1,6 +1,8 @@
 import Entities.Entities
 
 def getTrip(start, end, budget , properties ):
+
+   ##stub
    trip = Entities.Trip()
 
    flight = Entities.POI()
@@ -19,10 +21,10 @@ def getTrip(start, end, budget , properties ):
    ev1 = Entities.Event()
    ev1.eventID=2
    ev1.poiID=1
-   ev1.startTime=datetime.datetime(2016,5,6,5,40,0)
-   ev1.endTime=datetime.datetime(2016,5,6,8,40,0)
+   ev1.startTime=datetime.datetime(2016,5,6,8,40,0)
+   ev1.endTime=datetime.datetime(2016,5,6,11,40,0)
    ev1.prevEvent=0
-   ev1.nextEvent=0
+   ev1.nextEvent=2
 
    poi = Entities.POI()
    poi.category = "flight"
@@ -47,9 +49,24 @@ def getTrip(start, end, budget , properties ):
    ev3.eventID  = 4
    ev3.poiID=3
 
+   flight2 = flight
+   flight2.poiID = 5
+   flight.title = "prague->tlv tlv2425"
+   flight.description = "flight from prague to tlv"
+   flight.geoLocation = "tlv"
+   flight.grade = 1.01  # float
+   flight.cost = 1.01  # float
+   flight.openingHour = datetime.datetime(2016, 5, 6, 20, 40, 0)
+   flight.closingHour = datetime.datetime(2016, 5, 6, 23, 40, 0)
+   flight.activityTime = 3 * 60  # in minutes
+   flight.image = "image"
+
 
    trip.start = 2
-   trip.end =
+   trip.end = 5
    return trip
 
+
+
+}
 
