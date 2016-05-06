@@ -1,4 +1,6 @@
 from abs_api_handler import APIHandler
+from Entities.POI import POI
+from Entities.GeoLocation import GeoLocation
 
 
 class HotelGeosearch(APIHandler):
@@ -11,4 +13,15 @@ class HotelGeosearch(APIHandler):
         params = {"apikey": self.apikey, "latitude": latitude, "longitude": longitude, "radius": radius,
                   "check_in": check_in_date, "check_out": check_out_date}
         APIHandler.serialize_params(self, params)
-        return APIHandler.call_api(self)
+        raw_json = APIHandler.call_api(self)
+        pois = []
+        for poi in raw_json["results"]:
+            pois.append(POI(poiID=0,title=poi["property_name"],
+                            activityTime=0,
+                            category="Hotel",
+                            description="",
+                            geoLocation=GeoLocation(latitude=poi["location"]["latitude"]
+                                                    ,longitude=poi["location"]["longitude"]),
+                            grade=poi["min_daily_rate"]["amount"],
+                            image=""))
+        return pois

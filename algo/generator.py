@@ -1,4 +1,5 @@
-import Entities.Entities
+import Entities.Imports
+import datetime
 
 def getTrip(start, end, budget , properties ):
 
@@ -18,11 +19,12 @@ def getTrip(start, end, budget , properties ):
    flight.activityTime=3*60 #in minutes
    flight.image="image"
 
+
    ev1 = Entities.Event()
    ev1.eventID=2
    ev1.poiID=1
-   ev1.startTime=datetime.datetime(2016,5,6,8,40,0)
-   ev1.endTime=datetime.datetime(2016,5,6,11,40,0)
+   ev1.startTime = datetime.datetime(2016,5,6,8,40,0)
+   ev1.endTime = datetime.datetime(2016,5,6,11,40,0)
    ev1.prevEvent=0
    ev1.nextEvent=2
 
@@ -39,6 +41,7 @@ def getTrip(start, end, budget , properties ):
    poi.activityTime = 3 * 60  # in minutes
    poi.image = "image"
 
+
    ev2 = ev1
    ev2.eventID  = 4
    ev2.poiID=3
@@ -51,22 +54,32 @@ def getTrip(start, end, budget , properties ):
 
    flight2 = flight
    flight2.poiID = 5
-   flight.title = "prague->tlv tlv2425"
-   flight.description = "flight from prague to tlv"
-   flight.geoLocation = "tlv"
-   flight.grade = 1.01  # float
-   flight.cost = 1.01  # float
-   flight.openingHour = datetime.datetime(2016, 5, 6, 20, 40, 0)
-   flight.closingHour = datetime.datetime(2016, 5, 6, 23, 40, 0)
-   flight.activityTime = 3 * 60  # in minutes
-   flight.image = "image"
-
+   flight2.title = "prague->tlv tlv24225"
+   flight2.description = "flight from prague to tlv"
+   flight2.geoLocation = "tlv"
+   flight2.grade = 1.01  # float
+   flight2.cost = 1.01  # float
+   flight2.openingHour = datetime.datetime(2016, 5, 6, 20, 40, 0)
+   flight2.closingHour = datetime.datetime(2016, 5, 6, 23, 40, 0)
+   flight2.activityTime = 3 * 60  # in minutes
+   flight2.image = "image"
+##
 
    trip.start = 2
    trip.end = 5
    return trip
 
 
+def nextstep():
+    from APIHandler.poi_geosearch_api import POIGeosearch
+    from Entities.POI import POI
+    from Entities.GeoLocation import GeoLocation
 
-}
+    test = POIGeosearch()
+    results = test.call_api(latitude=52.374320, longitude=4.822390, radius=100)
+
+    for poi in results:
+        print poi
+
+
 
