@@ -23,9 +23,8 @@ class DBHandler(object):
         m.execute(query)
         return m.lastrowid
 
-
     def create(self, table_name, table_fields, table_values):
-        return self.execute("INSERT INTO {} ({}) VALUES({})".format(table_name, table_fields, table_values))
+        return self.execute("INSERT INTO {} ( {} ) VALUES( {} )".format(table_name, table_fields, table_values))
 
 
 
