@@ -4,6 +4,9 @@ from DBHandler import DBConnection
 
 class POI(object):
 
+    def __init__(self):
+        pass
+
     def __init__(self,poiID,title,description,category,geoLocation,grade,activityTime,image):
         self._poiID=poiID
         self._title=title
