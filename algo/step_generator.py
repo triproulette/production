@@ -6,7 +6,7 @@ from Entities import Event
 
 import datetime
 
-def stepGenerator(prop,prevnt, curevnt,):
+def stepGenerator(prop,prevnt):
     db = DBHandler.DBHandler()
     ##normalization
     population_grade = curevnt/5;
@@ -71,3 +71,6 @@ def stepGenerator(prop,prevnt, curevnt,):
     if abs(prevnt.endTime - prop._dayEnd) < datetime.timedelta(days=0, hours=1, minutes=0, seconds=0, microseconds=0):
        api = HotelGeosearch()
        results = api.call_api(prev_poi._geoLocation._latitude , prev_poi._geoLocation._longitude, radius=100, check_in_date=prevnt._endtime.isoformat(), check_out_date= prevnt._endtime + datetime.datetime.timedelta(days=1).replace(prop._dayBeginning)).save_to_db()
+
+
+    def algo_grade_calc():
