@@ -16,7 +16,7 @@ def stepGenerator(prop,prevnt, curevnt,):
         distance_grade = 0
     else:
         distance_grade = distance/210
-
+#
     ##prop calc
 
     if abs(prevnt.endTime-prop.breakfastTime) < datetime.timedelta(days=0, hours=1, minutes=0, seconds=0, microseconds=0) :
