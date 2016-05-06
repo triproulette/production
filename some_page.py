@@ -2,7 +2,6 @@ import falcon
 from DBHandler import DBHandler
 from DBHandler import DBConnection
 from Entities.POI import POI
-import datetime
 
 
 class Resource(object):
