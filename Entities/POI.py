@@ -24,6 +24,7 @@ class POI(object):
 
     def __str__(self):
         return 'ID: {} TITLE: {} DESC: {} CATEGORY: {} LOCATION: {} GRADE: {} ACTIVITY_TIME: {} IMAGE: {}'.format(
-            self._poiID,self._title,self._description,self._category,self._geoLocation,self._grade,self._activityTime,
-            self._image
+            self._poiID,self._title.encode('utf-8'),self._description.encode('utf-8'),self._category.encode('utf-8')
+            ,self._geoLocation,self._grade,self._activityTime,
+            self._image.encode('utf-8')
         )

@@ -24,3 +24,4 @@ class POIGeosearch(APIHandler):
                             activityTime=3,
                             image=poi["main_image"])
                         )
+        return pois

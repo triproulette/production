@@ -5,4 +5,4 @@ class GeoLocation(object):
         self._longitude = longitude
 
     def __str__(self):
-        return str(self._latitude) + ","+ str(self._longitude)
+        return str(self._latitude).encode('utf-8') + ","+ str(self._longitude).encode('utf-8')
