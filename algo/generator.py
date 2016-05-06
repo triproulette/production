@@ -63,7 +63,7 @@ def getTrip(start, end, budget , properties ):
    flight2.closingHour = datetime.datetime(2016, 5, 6, 23, 40, 0)
    flight2.activityTime = 3 * 60  # in minutes
    flight2.image = "image"
-
+##
 
    trip.start = 2
    trip.end = 5
