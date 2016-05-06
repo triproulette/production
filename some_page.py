@@ -1,10 +1,15 @@
 import falcon
+from DBHandler import DBHandler
+from DBHandler import DBConnection
 
 
 class Resource(object):
 
     def on_get(self, req, resp):
-        resp.body = '{"message": "code !!up!!!dated!!!!"}'
+        conn = DBConnection.DBConnection()
+        handler = DBHandler.DBHandler(conn)
+        tripId = handler.create(table_name='Trip',table_fields='user_id',table_values='some_user_id')
+        resp.body = '{"message": "trip inserted, id is {}"}'.format(tripId)
         resp.status = falcon.HTTP_200
 #sandak
 #Tomer
