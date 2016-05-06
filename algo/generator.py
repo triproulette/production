@@ -54,7 +54,7 @@ def getTrip(start, end, budget , properties ):
 
    flight2 = flight
    flight2.poiID = 5
-   flight2.title = "prague->tlv tlv2425"
+   flight2.title = "prague->tlv tlv24225"
    flight2.description = "flight from prague to tlv"
    flight2.geoLocation = "tlv"
    flight2.grade = 1.01  # float
@@ -68,6 +68,18 @@ def getTrip(start, end, budget , properties ):
    trip.start = 2
    trip.end = 5
    return trip
+
+
+def nextstep():
+    from APIHandler.poi_geosearch_api import POIGeosearch
+    from Entities.POI import POI
+    from Entities.GeoLocation import GeoLocation
+
+    test = POIGeosearch()
+    results = test.call_api(latitude=52.374320, longitude=4.822390, radius=100)
+
+    for poi in results:
+        print poi
 
 
 
