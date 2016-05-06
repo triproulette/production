@@ -24,7 +24,8 @@ class POI(object):
     def save_to_db(self):
         conn = DBConnection.DBConnection()
         handler = DBHandler.DBHandler(conn)
-        handler.create('poi','title,description,category,geoLocation,grade,activity_time,image',
-                       "'{}','{}','{}','{}','{}','{}','{}'".format(self._title,self._description,self._category,
+        return handler.create('poi','title,description,category,geoLocation,grade,activity_time,image',
+                              "'{}','{}','{}','{}','{}','{}','{}'".format(self._title,self._description,
+                                                                          self._category,
                                                      self._geoLocation,self._grade,self._activityTime,
                                                      self._image))
