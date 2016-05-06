@@ -19,13 +19,6 @@ class DBHandler:
         return m.fetchall()
 #
 
-    def create_user(self):
-
-    def read_user(self):
-
-    def update_user(self):
-
-    def delete_user(self):
 
 
 
