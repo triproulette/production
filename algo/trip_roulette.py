@@ -30,8 +30,8 @@ class TripRoulette(object):
         # amsterdam airport: 52.310558, 4.768221
         # paris laptop: 49.009677, 2.547903
         self._trip._eventList.append(Event(
-                                           startTime=datetime(self.end_trip),
-                                           endTime=datetime(self.end_trip),
+                                           startTime=self.end_trip,
+                                           endTime=self.end_trip,
                                            poiID=poi.save_to_db()))    # append last event
 
         while  abs(self._trip.getOneBeforeLastEvent()._endTime-self._trip.getLastEvent()._startTime) > datetime.timedelta(days=0, hours=2, minutes=0, seconds=0, microseconds=0) :
