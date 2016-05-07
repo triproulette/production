@@ -18,7 +18,7 @@ def stepGenerator(prop,prevnt):
         distance_grade = distance/210
 
     ##prop calc
-#
+##
     if abs(prevnt.endTime-prop.breakfastTime) < datetime.timedelta(days=0, hours=1, minutes=0, seconds=0, microseconds=0) :
         foodPoi = POI.POI()
         foodPoi._title = "breakfast"
