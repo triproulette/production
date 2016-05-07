@@ -23,7 +23,7 @@ class TripRoulette(object):
         poi._description="flight"
         poi._category="flight"
         poi._geoLocation=GeoLocation(49.009677, 2.547903)
-        poi._trip._eventList.append(Event(eventID=0,
+        self._trip._eventList.append(Event(eventID=0,
                                            startTime=datetime(self.start_trip),
                                            endTime=datetime(self.start_trip),
                                            poiID=poi.save_to_db()))     # append first event
