@@ -11,7 +11,8 @@ class Resource(object):
 
         if action == 'get':
             if city == 'amsterdam':
-                print req.query_string
+                #print req.query_string
+                print req.path
                 g = re.search(r'jQuery[^\&]*',req.query_string)
                 g = g.group(0)
                 poi_generator = POIGeosearch()
