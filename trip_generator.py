@@ -2,8 +2,8 @@ import falcon
 import json
 from DBHandler import DBHandler
 from DBHandler import DBConnection
-from algo.trip_roulette import *
-import datetime
+from algo.trip_roulette import TripRoulette
+from datetime import datetime
 
 
 class Resource(object):
