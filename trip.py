@@ -29,6 +29,8 @@ class Resource(object):
                     json_event.append(ev)
                 except:
                     print 'error appending'
+                    print '{}'.format(len(results[i]))
+                    print '{}'.format(results[i])
                     continue
 
             resp.body = '{{ events: [ {} ] }}'.format(', '.join(json_event))
