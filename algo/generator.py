@@ -4,7 +4,7 @@ import datetime
 def getTrip(start, end, budget , properties ):
 
    ##stub
-   trip = Entities.Trip()
+   trip = Entities.Trip(1,0,0,2000)
 
    flight = Entities.POI()
    flight.category = "flight"
@@ -79,7 +79,7 @@ def nextstep():
     results = test.call_api(latitude=52.374320, longitude=4.822390, radius=100)
 
     for poi in results:
-        print poi
+        print(poi)
 
 
 
