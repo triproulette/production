@@ -26,6 +26,14 @@ class Trip(object):
         self._eventList.insert(listSize-1,event)
         self._eventList.insert(listSize,lastEvent)
 
+    def getLastEvent(self):
+        listSize=len(self._eventList)
+        return self._eventList[listSize-1]
+
+    def getOneBeforeLastEvent(self):
+        listSize = len(self._eventList)
+        return self._eventList[listSize - 2]
+
     def save_to_db(self):
         conn = DBConnection.DBConnection()
         handler = DBHandler.DBHandler(conn)
