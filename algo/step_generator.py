@@ -2,6 +2,7 @@ from APIHandler.google_distance_api import GoogleDistance
 from APIHandler.hotel_geosearch_api import HotelGeosearch
 from APIHandler.poi_geosearch_api import POIGeosearch
 from DBHandler import DBHandler
+from DBHandler import DBConnection
 from Entities import POI
 from Entities import Event
 
@@ -34,7 +35,8 @@ def algo_grade_calc(db, prop, prennt, prev_poi, curevnt):
 
 
 def stepGenerator(prop,prevnt):
-    db = DBHandler.DBHandler()
+    conn = DBConnection.DBConnection()
+    db = DBHandler.DBHandler(conn)
     ##normalization
     prev_poi = db.getPoi(prevnt.eventID)
 
