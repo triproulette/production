@@ -9,7 +9,6 @@ class Resource(object):
     def on_get(self, req, resp, action, city):
 
         if action == 'get':
-
             if city == 'amsterdam':
                 print 'amsterdam'
                 poi_generator = POIGeosearch()
