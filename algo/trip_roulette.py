@@ -2,6 +2,7 @@ from algo.template_roulette import TemplateRoulette
 from Entities.Trip import Trip
 from Entities.Event import Event
 from datetime import datetime
+import step_generator
 
 
 class TripRoulette(object):
@@ -23,3 +24,6 @@ class TripRoulette(object):
                                            startTime=datetime(self.end_trip),
                                            endTime=datetime(self.end_trip),
                                            poiID=1))    # append last event
+
+        whule
+        stepGenerator(prop, prevnt)
