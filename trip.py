@@ -21,7 +21,7 @@ class Resource(object):
             json_event = ()
             for i in range(ev_count):
                 try:
-                    ev = '{{ {} }}'.format(dict(results[i]))
+                    ev = '{}'.format(dict(results[i]))
                     print ev
                     json_event.append(ev)
                 except:
