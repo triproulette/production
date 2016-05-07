@@ -17,9 +17,6 @@ class Resource(object):
             results = handler.query("SELECT e.id,p.title,p.description,p.category,e.s_time, e.e_time "+
                                     "FROM tr_db.poi as p JOIN tr_db.event as e ON e.poi_id = p.id "+
                                     "ORDER BY e.id ASC LIMIT {},{}".format(event_id,ev_count))
-            #   conn.close()
-            """
-            print results
 
             json_event = ()
             for i in range(ev_count):
@@ -35,8 +32,4 @@ class Resource(object):
                     continue
 
             resp.body = '{{ events: [ {} ] }}'.format(', '.join(json_event))
-            """
-
-            json_string = json.dumps(results, default=str)
-            resp.body = '{{ {} }}'.format(results)
             resp.status = falcon.HTTP_200
