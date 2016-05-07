@@ -23,7 +23,7 @@ class Resource(object):
             json_event = []
             for i in range(ev_count):
                 ev = '{id: {}, title: {}, description: {}, category: {}, start_time: {}, end_time: {}}'\
-                    .format(results[i][0],results[i][1],results[i][2],results[i][3],results[i][4],results[i][5])
+                    .format(results[i])
                 print ev
                 json_event.append(ev)
 
