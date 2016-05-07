@@ -17,7 +17,7 @@ class POIGrade(object):
 
 
 def algo_grade_calc(db, prop, prennt, prev_poi, curevnt):
-    curr_poi = db.getPoi(curevnt.eventID)
+    curr_poi = db.getPoi(curevnt._poiID)
     api = GoogleDistance()
     distance = api.call_api(prev_poi._geoLocation._latitude, prev_poi._geoLocation._longitude,
                             curr_poi._geoLocation._latitude, curr_poi._geoLocation._longitude)
@@ -38,7 +38,7 @@ def stepGenerator(prop,prevnt):
     conn = DBConnection.DBConnection()
     db = DBHandler.DBHandler(conn)
     ##normalization
-    prev_poi = db.getPoi(prevnt.eventID)
+    prev_poi = db.getPoi(prevnt._poiID)
 
     ##prop calc
 

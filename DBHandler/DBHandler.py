@@ -1,4 +1,6 @@
 import mysql.connector
+from Entities.POI import POI
+from Entities.GeoLocation import GeoLocation
 
 
 class DBHandler(object):
@@ -28,6 +30,23 @@ class DBHandler(object):
         q = "INSERT INTO {} ({}) VALUES({})".format(table_name, table_fields, table_values)
         print q
         return self.execute(q)
+
+    def getPoi(self, poi_id):
+        res = self.query("SELEC * FROM poi WHERE id = '{}'".format(poi_id))
+        if len(res) <= 0:
+            return None
+        else:
+            row = res[0]
+            poi = POI()
+            poi._title = row["title"]
+            poi._description = row["description"]
+            poi._activityTime = row["activity_time"]
+            poi._category = row["category"]
+            poi._image = row["image"]
+            geo_loc = (row["geoLocation"]).split(",")
+            poi._geoLocation = GeoLocation(latitude=geo_loc[0],longitude=geo_loc[1])
+            poi._grade = row["grade"]
+            return poi
 
 
 
