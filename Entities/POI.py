@@ -9,7 +9,7 @@ class POI(object):
         self._title=""
         self._description=""
         self._category=""
-        self._geoLocation=""
+        self._geoLocation=None
         self._grade=0.0
         self._activityTime=0
         self._image=""
