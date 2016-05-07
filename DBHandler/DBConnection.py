@@ -11,7 +11,7 @@ class DBConnection(object):
             DBConnection.instance = object.__new__(cls)
         return DBConnection.instance
 
-    def __init__(self, user='greenitc_tr', password='bababa', host='212.150.101.78', database='greenitc_tr'):
+    def __init__(self, user='monty', password='some_pass', host='triproullete.cloudapp.net', database='tr_db'):
         self.user = user
         self.password = password
         self.host = host
