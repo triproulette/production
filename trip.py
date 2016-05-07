@@ -22,10 +22,10 @@ class Resource(object):
 
             json_event = []
             for i in range(ev_count):
-                ev = '{trip_id: {}, title: {}, description: {}, category: {}, start_time: {}, end_time: {}}'\
+                ev = '{{trip_id: {}, title: {}, description: {}, category: {}, start_time: {}, end_time: {}}}'\
                     .format(results[i])
                 print ev
                 json_event.append(ev)
 
-            resp.body = '{events: [ {},{},{},{} ]}'.format(json_event[0],json_event[1],json_event[2],json_event[3])
+            resp.body = '{{events: [ {},{},{},{} ]}}'.format(json_event[0],json_event[1],json_event[2],json_event[3])
             resp.status = falcon.HTTP_200
