@@ -10,6 +10,7 @@ import datetime
 class Resource(object):
 
     def on_get(self, req, resp):
+        """
         conn = DBConnection.DBConnection()
         handler = DBHandler.DBHandler(conn)
         trip = Trip(user_id='FUCKING_FB_ID')
@@ -22,3 +23,4 @@ class Resource(object):
         #resp.body = '{"poi": "poi inserted, id is %s", "trip": "trip id inserted id %s"}' % (poiId, tripId)
         resp.body = '{"event: %s"}' % (eventId)
         resp.status = falcon.HTTP_200
+        """
