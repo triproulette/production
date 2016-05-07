@@ -21,8 +21,7 @@ class Resource(object):
             json_event = ()
             for i in range(ev_count):
                 try:
-                    ev = '{{ trip_id: {}, title: {}, desc: {}, category: {}, start_time: {}, end_time: {} }}'\
-                        .format(results[i])
+                    ev = '{{ {} }}'.format(dict(results[i]))
                     print ev
                     json_event.append(ev)
                 except:
@@ -31,5 +30,5 @@ class Resource(object):
                     print '{}'.format(results[i])
                     continue
 
-            resp.body = '{{ events: [ %s ] }}' % (', '.join(json_event))
+            resp.body = '{{ events: [ {} ] }}'.format(', '.join(json_event))
             resp.status = falcon.HTTP_200
