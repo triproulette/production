@@ -31,5 +31,5 @@ class Resource(object):
                     print '{}'.format(results[i])
                     continue
 
-            resp.body = '{{ events: [ {} ] }}'.format(', '.join(json_event))
+            resp.body = '{{ events: [ %s ] }}' % (', '.join(json_event))
             resp.status = falcon.HTTP_200
