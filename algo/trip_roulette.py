@@ -4,6 +4,7 @@ from Entities.Event import Event
 from Entities.POI import POI
 from Entities.GeoLocation import GeoLocation
 from datetime import datetime
+from datetime import timedelta
 from algo.step_generator import stepGenerator
 
 
@@ -34,7 +35,7 @@ class TripRoulette(object):
                                            endTime=self.end_trip,
                                            poiID=poi.save_to_db()))    # append last event
 
-        while  abs(self._trip.getOneBeforeLastEvent()._endTime-self._trip.getLastEvent()._startTime) > datetime.timedelta(days=0, hours=2, minutes=0, seconds=0, microseconds=0) :
+        while abs(self._trip.getOneBeforeLastEvent()._endTime-self._trip.getLastEvent()._startTime) > timedelta(days=0, hours=2, minutes=0, seconds=0, microseconds=0) :
             stepGenerator(self._prop, self._trip.getOneBeforeLastEvent())
         self._trip.save_to_db()
         return self._trip
