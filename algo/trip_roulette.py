@@ -7,7 +7,6 @@ from datetime import datetime
 from algo.step_generator import stepGenerator
 
 
-
 class TripRoulette(object):
 
     def __init__(self, trip_type, city, start_trip, end_trip):
