@@ -23,12 +23,12 @@ class Resource(object):
             json_event = ()
             for i in range(ev_count):
                 try:
-                    ev = '{{trip_id: {}, title: {}, description: {}, category: {}, start_time: {}, end_time: {}}}'\
+                    ev = '{{ trip_id: {}, title: {}, description: {}, category: {}, start_time: {}, end_time: {} }}'\
                         .format(results[i])
                     print ev
                     json_event.append(ev)
                 except:
                     pass
 
-            resp.body = '{{events: [ {},{},{},{} ]}}'.format(json_event)
+            resp.body = '{{ events: [ {} ] }}'.format(', '.join(json_event))
             resp.status = falcon.HTTP_200
