@@ -21,11 +21,14 @@ class DBHandler(object):
     def execute(self, query):
         m = self.db_connection.connection.cursor()
         m.execute(query)
+        self.db_connection.connection.commit()
         return m.lastrowid
 
-
     def create(self, table_name, table_fields, table_values):
-        return self.execute("INSERT INTO {} ({}) VALUES({})".format(table_name, table_fields, table_values))
+        q = "INSERT INTO {} ({}) VALUES({})".format(table_name, table_fields, table_values)
+        print q
+        return self.execute(q)
+
 
 
 
