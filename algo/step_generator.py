@@ -92,14 +92,14 @@ def stepGenerator(prop,prevnt):
        results = api.call_api(prev_poi._geoLocation._latitude , prev_poi._geoLocation._longitude, radius=100, check_in_date=prevnt._endtime.isoformat(), check_out_date= prevnt._endtime + datetime.datetime.timedelta(days=1).replace(prop._dayBeginning)).save_to_db()
     calculated = []
     for poi in results:
-        calculated.append( POIGrade(algo_grade_calc(db, prop, prevnt, prev_poi, poi), poi))
+        calculated.append( POIGrade(algo_grade_calc(db, prop, prevnt, prev_poi, poi), poi.save_to_db()))
     sorted_calc = sorted(calculated,key=lambda x: x._grade, reverse=True)
-    return sorted_calc[0]
+    return sorted_calc[0].poi
 
     api = POIGeosearch()
     results = api.call_api(prev_poi._geoLocation._latitude, prev_poi._geoLocation._longitude, radius=100)
     calculated = []
     for poi in results:
-        calculated.append( POIGrade(algo_grade_calc(db, prop, prevnt, prev_poi, poi), poi))
+        calculated.append( POIGrade(algo_grade_calc(db, prop, prevnt, prev_poi, poi), poi.save_to_db()))
     sorted_calc = sorted(calculated,key=lambda x: x._grade, reverse=True)
-    return sorted_calc[0]
+    return sorted_calc[0].poi
