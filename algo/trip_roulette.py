@@ -23,13 +23,13 @@ class TripRoulette(object):
         poi._description="flight"
         poi._category="flight"
         poi._geoLocation=GeoLocation(49.009677, 2.547903)
-        self._trip._eventList.append(Event(eventID=0,
+        self._trip._eventList.append(Event(
                                            startTime=self.start_trip,
                                            endTime=self.start_trip,
                                            poiID=poi.save_to_db()))     # append first event
         # amsterdam airport: 52.310558, 4.768221
         # paris laptop: 49.009677, 2.547903
-        self._trip._eventList.append(Event(eventID=99,
+        self._trip._eventList.append(Event(
                                            startTime=datetime(self.end_trip),
                                            endTime=datetime(self.end_trip),
                                            poiID=poi.save_to_db()))    # append last event
