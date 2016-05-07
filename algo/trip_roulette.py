@@ -25,7 +25,7 @@ class TripRoulette(object):
                                            endTime=datetime(self.end_trip),
                                            poiID=1))    # append last event
 
-        while  abs(self._trip.getOneBeforeLastEvent()._endTime-self._trip.getLastEvent()._startTime) > datetime.timedelta(days=0, hours=2, minutes=0, seconds=0, microseconds=0)
+        while  abs(self._trip.getOneBeforeLastEvent()._endTime-self._trip.getLastEvent()._startTime) > datetime.timedelta(days=0, hours=2, minutes=0, seconds=0, microseconds=0) :
             stepGenerator(self._prop, self._trip.getOneBeforeLastEvent())
 
         return self._trip
