@@ -28,7 +28,8 @@ class Resource(object):
                     print ev
                     json_event.append(ev)
                 except:
-                    pass
+                    print 'error appending'
+                    continue
 
             resp.body = '{{ events: [ {} ] }}'.format(', '.join(json_event))
             resp.status = falcon.HTTP_200
