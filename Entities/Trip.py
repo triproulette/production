@@ -33,6 +33,7 @@ class Trip(object):
     def getOneBeforeLastEvent(self):
         listSize = len(self._eventList)
         return self._eventList[listSize - 2]
+    #
 
     def save_to_db(self):
         conn = DBConnection.DBConnection()
