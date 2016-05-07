@@ -14,7 +14,7 @@ class Resource(object):
             handler = DBHandler.DBHandler(conn)
             #   get next ev_count events
             results = handler.query("SELECT e.id,p.title,p.description,p.category,e.s_time, e.e_time "+
-                                    "FROM tr_db.poi as p JOIN tr_db.event as e ON e.poi_id = p.id"+
+                                    "FROM tr_db.poi as p JOIN tr_db.event as e ON e.poi_id = p.id "+
                                     "ORDER BY e.id ASC LIMIT {},{}".format(event_id,ev_count))
             conn.close()
 
