@@ -20,6 +20,8 @@ class TripRoulette(object):
                                            startTime=datetime(self.start_trip),
                                            endTime=datetime(self.start_trip),
                                            poiID=0))     # append first event
+        # amsterdam airport: 52.310558, 4.768221
+        # paris laptop: 49.009677, 2.547903
         self._trip._eventList.append(Event(eventID=99,
                                            startTime=datetime(self.end_trip),
                                            endTime=datetime(self.end_trip),
