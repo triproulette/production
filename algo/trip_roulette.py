@@ -15,9 +15,9 @@ class TripRoulette(object):
         self.start_trip = start_trip
         self.end_trip = end_trip
 
-    def generate_random_trip(self):
+    def generate_random_trip(self, user_id):
         self._prop = TemplateRoulette(self.trip_type).generate_template()   # generate template
-        self._trip = Trip()  # generate trip entity
+        self._trip = Trip(user_id)  # generate trip entity
         poi = POI()
         poi._title="flight"
         poi._description="flight"

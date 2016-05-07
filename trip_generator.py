@@ -13,7 +13,7 @@ class Resource(object):
         if action == 'generate':
             print 'start'
             generator = TripRoulette(0, "paris", datetime(2016,05,07,8,0,0), datetime(2016,05,12,21,0,0))
-            generator.generate_random_trip()
+            generator.generate_random_trip(user_id)
             print 'end'
             resp.body = ''
             resp.status = falcon.HTTP_200
