@@ -37,6 +37,6 @@ class Resource(object):
             resp.body = '{{ events: [ {} ] }}'.format(', '.join(json_event))
             """
 
-            json_string = json.dumps(results)
+            json_string = json.dumps(results, default=str)
             resp.body = '{{ {} }}'.format(results)
             resp.status = falcon.HTTP_200
