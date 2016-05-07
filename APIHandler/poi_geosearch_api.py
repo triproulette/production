@@ -15,8 +15,9 @@ class POIGeosearch(APIHandler):
         raw_json = APIHandler.call_api(self)
         pois = []
 
+        """
         for poi in raw_json["points_of_interest"]:
-            pois.append(POI(poiID=0, title=poi["title"], description=poi["details"]["short_description"],
+            pois.append(POI(title=poi["title"], description=poi["details"]["short_description"],
                             category="",
                             geoLocation=GeoLocation(latitude=poi["location"]["latitude"],
                                                     longitude=poi["location"]["longitude"]),
@@ -25,3 +26,5 @@ class POIGeosearch(APIHandler):
                             image=poi["main_image"])
                         )
         return pois
+        """
+        return raw_json["points_of_interest"]
